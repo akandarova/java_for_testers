@@ -27,12 +27,20 @@ public class TriangleTests {
         try{
             new Triangle(-2.0, 5.0, 3.0);
             Assertions.fail();
-        }
-        catch (IllegalArgumentException exception){
+        } catch (IllegalArgumentException exception){
             //ok
         }
     }
-    
+
+    @Test
+    void summaCannotBeLittleThenAnother(){
+        try{
+            new Triangle(1.0, 2.0, 5.0);
+            Assertions.fail();
+        } catch (IllegalArgumentException exception){
+            //ok
+        }
+    }
 
 }
 

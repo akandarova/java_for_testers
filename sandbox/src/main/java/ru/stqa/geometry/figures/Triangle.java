@@ -6,6 +6,9 @@ public record Triangle(double sideA, double sideB, double sideC) {
         if (sideA < 0 || sideB < 0 || sideC < 0){
             throw new IllegalArgumentException("Triangle side should be non-negative");
         }
+        else if ((sideA + sideB) < sideC || (sideB + sideC) < sideA || (sideA + sideC) > sideB){
+            throw new IllegalArgumentException("The sum of two sides cannot be less than the third");
+        }
     }
 
     static void printTriangleArea(Triangle t) {
